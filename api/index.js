@@ -32,7 +32,9 @@ app.use(async (req, res, next) => {
 
 
 
-
+// PRODUCTION ISSUE
+// This snippet has to stay above all routes
+// Fix for live url on vercel hosting
 app.use((req, res, next) => {
   if (req.query.path !== undefined) {
     req.url = '/api/' + req.query.path;
