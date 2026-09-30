@@ -33,6 +33,19 @@ app.use(async (req, res, next) => {
 
 
 
+app.use((req, res, next) => {
+  if (req.query.path !== undefined) {
+    req.url = '/api/' + req.query.path;
+  }
+  next();
+});
+
+
+
+
+
+
+
 
 // Routes
 
