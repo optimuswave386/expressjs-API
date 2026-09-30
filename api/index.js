@@ -212,6 +212,7 @@ app.use('/cep', cepRouter);
 // test route to serve HTML content for React app
 // Route to serve HTML content for React app
 app.get('/getProjects', (req, res) => {
+    console.log('Incoming:', req.method, req.originalUrl);
     // This could be a static HTML file, or dynamically generated content
     const htmlContent = `
         <h2>Welcome to the dynamically loaded content!</h2>
@@ -236,11 +237,13 @@ app.get('/getProjects', (req, res) => {
 // Basic route
 // Respond to GET request on the root route ('/')
 app.get('/', (req, res) => {
+  console.log('Incoming:', req.method, req.originalUrl);
   res.send('Hello World! This is the homepage.');
 });
 
 // Respond to POST request on the root route ('/')
 app.post('/', (req, res) => {
+  console.log('Incoming:', req.method, req.originalUrl);
   res.send('Hello World! This is the homepage. Got a POST request');
   console.log("POST request body:", req.body);
 });
@@ -252,6 +255,7 @@ app.post('/', (req, res) => {
 // test route to serve HTML content for React app
 // Route to serve HTML content for React app
 app.get('/api/get-html', (req, res) => {
+    console.log('Incoming:', req.method, req.originalUrl);
     // This could be a static HTML file, or dynamically generated content
     const htmlContent = `
         <h2>Welcome to the dynamically loaded content!</h2>
