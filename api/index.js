@@ -205,10 +205,16 @@ app.use('/payment', paymentRouter);
 
 
 
+
+
+
 // Design Notes section
 // pagination to be implemented
 const dnRouter = require('../routes/designnotesRoutes.js');
 app.use('/dn', dnRouter);
+
+
+
 
 
 
@@ -224,6 +230,23 @@ app.use('/cep', cepRouter);
 
 
 
+
+
+
+
+// Contact page on website (different than support request/hepcenter page)
+// Contact page implemented on website with APIs for youtube/github
+// Send email to contact
+const contactRouter = require('../routes/contactRoute.js');
+app.use('/contact', contactRouter);
+
+
+
+
+
+
+
+
 // test route to serve HTML content for React app
 // Route to serve HTML content for React app
 app.get('/getProjects', (req, res) => {
@@ -231,7 +254,7 @@ app.get('/getProjects', (req, res) => {
     // This could be a static HTML file, or dynamically generated content
     const htmlContent = `
         <h2>Welcome to the dynamically loaded content!</h2>
-        <p>This paragraph was fetched using Axios and injected into the page.</p>
+        <p>This paragraph was fetched using Axios into the page.</p>
         <ul>
             <li>Item 1</li>
             <li>Item 2</li>
@@ -274,7 +297,7 @@ app.get('/api/get-html', (req, res) => {
     // This could be a static HTML file, or dynamically generated content
     const htmlContent = `
         <h2>Welcome to the dynamically loaded content!</h2>
-        <p>This paragraph was fetched using Axios and injected into the page.</p>
+        <p>This paragraph was fetched using Axios into the page.</p>
         <ul>
             <li>Item 1</li>
             <li>Item 2</li>
